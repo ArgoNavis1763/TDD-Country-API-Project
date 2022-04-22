@@ -8,6 +8,7 @@ const {
   poundData,
   caricomData,
   germanData,
+  europeData,
 } = require("./mocks/countryData.js");
 
 jest.mock("axios");
@@ -121,6 +122,20 @@ describe("fetch list of countries that speak the same language", () => {
   it("should return an error if API call fails", async () => {
     axios.get.mockRejectedValueOnce(networkError);
     const result = await new CountryApi().fetchLanguage();
+    expect(result).toEqual([]);
+  });
+});
+
+describe("fetch list of countries in same region", () => {
+  it("should return array of countries in same region", async () => {
+    axios.get.mockResolvedValueOnce(europeData);
+    const result = await new CountryApi().fetchRegion("Europe");
+    expect(result[1].name).toEqual("Albania");
+  });
+
+  it("should return an error if API call fails", async () => {
+    axios.get.mockRejectedValueOnce(networkError);
+    const result = await new CountryApi().fetchRegion("Europe");
     expect(result).toEqual([]);
   });
 });

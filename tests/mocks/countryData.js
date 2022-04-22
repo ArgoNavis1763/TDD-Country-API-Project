@@ -272,6 +272,35 @@ const germanData = [
   },
 ];
 
+const europeData = {
+  data: [
+    {
+      name: "Åland Islands",
+      capital: "Mariehamn",
+      region: "Europe",
+      population: 28875,
+      flag: "https://flagcdn.com/ax.svg",
+      independent: false,
+    },
+    {
+      name: "Albania",
+      capital: "Tirana",
+      region: "Europe",
+      population: 2837743,
+      flag: "https://flagcdn.com/al.svg",
+      independent: false,
+    },
+    {
+      name: "Andorra",
+      capital: "Andorra la Vella",
+      region: "Europe",
+      population: 77265,
+      flag: "https://flagcdn.com/ad.svg",
+      independent: false,
+    },
+  ],
+};
+
 module.exports = {
   allCountryData,
   unitedCountryData,
@@ -280,4 +309,5 @@ module.exports = {
   poundData,
   caricomData,
   germanData,
+  europeData,
 };
