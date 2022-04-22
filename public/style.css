@@ -1,0 +1,55 @@
+body {
+  background-color: #f2f2f2;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.input {
+  margin: 37px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  /* display: flex;
+  flex-direction: column; */
+  width: 264px;
+  height: 336px;
+  background-color: white;
+  margin: 37px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 5px;
+  padding: 5px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+h4 {
+  margin: 5px;
+  padding: 5px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+img {
+  width: 264px;
+  height: 160px;
+}
