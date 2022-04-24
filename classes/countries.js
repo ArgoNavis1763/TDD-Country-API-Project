@@ -78,11 +78,11 @@ module.exports = class CountryApi {
       const allResult = result.data;
 
       const regionResult = allResult.filter(
-        (country) => country.region === region
+        (country) => country.region.toLowerCase() === region
       );
-      Q123;
       return regionResult;
     } catch (error) {
+      console.log(error);
       return [];
     }
   }
