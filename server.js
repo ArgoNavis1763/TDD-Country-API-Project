@@ -16,11 +16,17 @@ app.listen(8080, () => {
   console.log("listening on 8080");
 });
 
-app.use(express.static("public"));
-
 app.get("/fetch-countries/:region", async (req, res) => {
   const country = new CountryApi();
   const result = await country.fetchRegion(req.params.region);
-
   res.send(result);
 });
+
+app.get("/fetch-countries/name/:name", async (req, res) => {
+  const country = new CountryApi();
+
+  const result = await country.fetchCountries(req.params.name);
+  res.send(result);
+});
+
+app.use(express.static("public"));

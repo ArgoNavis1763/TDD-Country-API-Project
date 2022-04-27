@@ -52,6 +52,14 @@ regionDropdown.addEventListener("change", async (event) => {
   selectedRegion = event.target.value;
   const response = await fetch(`/fetch-countries/${selectedRegion}`);
   const data = await response.json();
-  console.log(data);
+  createCards(data);
+});
+
+const input = document.getElementById("input");
+input.addEventListener("input", async (event) => {
+  container.innerHTML = "";
+  let inputValue = event.target.value;
+  const response = await fetch(`/fetch-countries/name/${inputValue}`);
+  const data = await response.json();
   createCards(data);
 });

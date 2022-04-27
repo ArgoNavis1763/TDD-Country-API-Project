@@ -7,7 +7,6 @@ module.exports = class CountryApi {
   async fetchAll() {
     try {
       const result = await axios.get(`${this.url}/all`);
-
       return result;
     } catch (error) {
       return [];
@@ -17,7 +16,7 @@ module.exports = class CountryApi {
   async fetchCountries(name) {
     try {
       const result = await axios.get(`${this.url}/name/${name}`);
-      return result;
+      return result.data;
     } catch (error) {
       return [];
     }
@@ -82,7 +81,6 @@ module.exports = class CountryApi {
       );
       return regionResult;
     } catch (error) {
-      console.log(error);
       return [];
     }
   }
